@@ -42,7 +42,7 @@ Models in the making
 
 ### Frozen corpus
 
-Main corpus, to be kept constant during all experiments. Saved in arrow format to load use:
+Main corpus, to be kept constant during all experiments. Saved in arrow format. To load the dataset use:
 
 ```python
 train_val_split = load_from_disk('/datadrive_2/frozen_corpus')
