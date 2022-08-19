@@ -34,9 +34,9 @@ Data used for training is stored here: `/datadrive_2/frozen_corpus`. The `frozen
 
 Models in the making
 
-`bnert-time-y`: trained on the `frozen_corpus` but doesn't add specific year tokens to the tokenizer, just use the standard vocabulary of the tokenizer.
-`bnert-no-meta`: model trained only on the text
-`bnert-pol`: model trained with prepending political leaning (use of special tokens depends on the time experiments,
+- `bnert-time-y`: trained on the `frozen_corpus` but doesn't add specific year tokens to the tokenizer, just use the standard vocabulary of the tokenizer.
+- `bnert-no-meta`: model trained only on the text
+- `bnert-pol`: model trained with prepending political leaning (use of special tokens depends on the time experiments,
 
 ## Data
 
