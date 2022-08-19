@@ -20,7 +20,7 @@ preds = mask_filler(text)
 
 Original train-test split is lost. 
 
-### bnert-time-st-y (almost completed ETA 3pm)
+### bnert-time-st-y
 
 `/datadrive_2/bnert-time-st-y`: DistilBERT model trained on 0.5 billion tokens (see below for path to dataset). We divided the text into chunks of 100 words (i.e. no sentence splitting). 
 
