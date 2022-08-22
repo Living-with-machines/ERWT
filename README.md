@@ -36,7 +36,7 @@ Models in the making
 
 ### bnert-time-y
 
-`/datadrive_2/bnert-time-y`: DistilBERT model trained on same data as the above. Date are added as standard tokens, and seperated from the text with a `[DATE]` special token.
+`/datadrive_2/bnert-time-y`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token.
 
 To use, please preprocess text as follows:
 ```python
