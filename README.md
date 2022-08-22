@@ -44,11 +44,16 @@ text = f"1810 [DATE] [MASK] Majesty."
 preds = mask_filler(text)
 ```
 
-### bnert-hmd
+### bnert-hmd
 
 `/datadrive_2/bnert-hmd`: DistilBERT model trained on HMD without additional prepended metadata. 
 
-### Models to train
+```python
+text = f"[MASK] Majesty."
+preds = mask_filler(text)
+```
+
+### Models to train
 - `bnert-pol`: model trained with prepending political leaning (use of special tokens depends on the time experiments,
 
 ## Data
