@@ -34,8 +34,21 @@ Data used for training is stored here: `/datadrive_2/frozen_corpus`. The `frozen
 
 Models in the making
 
-- `bnert-time-y`: trained on the `frozen_corpus` but doesn't add specific year tokens to the tokenizer, just use the standard vocabulary of the tokenizer.
-- `bnert-no-meta`: model trained only on the text
+### bnert-time-y
+
+`/datadrive_2/bnert-time-y`: DistilBERT model trained on same data as the above. Date are added as standard tokens, and seperated from the text with a `[DATE]` special token.
+
+To use, please preprocess text as follows:
+```python
+text = f"1810 [DATE] [MASK] Majesty."
+preds = mask_filler(text)
+```
+
+### bnert-hmd
+
+`/datadrive_2/bnert-hmd`: DistilBERT model trained on HMD without additional prepended metadata. 
+
+### Models to train
 - `bnert-pol`: model trained with prepending political leaning (use of special tokens depends on the time experiments,
 
 ## Data
