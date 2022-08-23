@@ -53,6 +53,21 @@ text = f"[MASK] Majesty."
 preds = mask_filler(text)
 ```
 
+### bnert-pol-st
+
+`/datadrive_2/bnert-pol-st`: DistilBERT trained with metadata on political leaning. The political labels are
+```python
+['[lib]', '[con]', '[none]', '[rad]', '[neutr]']
+```
+Metadata and text and separated by a special `[POL]` token.
+
+
+```python
+text = f"[liib] [POL] [MASK] Majesty."
+preds = mask_filler(text)
+```
+
+
 ### Models to train
 - `bnert-pol`: model trained with prepending political leaning (use of special tokens depends on the time experiments,
 
