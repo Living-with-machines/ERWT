@@ -63,7 +63,7 @@ Metadata and text and separated by a special `[POL]` token.
 
 
 ```python
-text = f"[liib] [POL] [MASK] Majesty."
+text = f"[lib] [POL] [MASK] Majesty."
 preds = mask_filler(text)
 ```
 
