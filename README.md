@@ -44,6 +44,29 @@ text = f"1810 [DATE] [MASK] Majesty."
 preds = mask_filler(text)
 ```
 
+
+### bnert-time-y_masked_25
+
+
+`/datadrive_2/bnert-time-y_masked_25`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.25.
+
+To use, please preprocess text as follows:
+```python
+text = f"1810 [DATE] [MASK] Majesty."
+preds = mask_filler(text)
+```
+
+### bnert-time-y_masked_75
+
+
+`/datadrive_2/bnert-time-y_masked_75`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.75.
+
+To use, please preprocess text as follows:
+```python
+text = f"1810 [DATE] [MASK] Majesty."
+preds = mask_filler(text)
+```
+
 ### bnert-hmd
 
 `/datadrive_2/bnert-hmd`: DistilBERT model trained on HMD without additional prepended metadata. 
