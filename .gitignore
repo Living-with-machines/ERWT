@@ -126,4 +126,12 @@ venv.bak/
 dmypy.json
 
 # Pyre type checker
+distilbert-hmd-uncased-no-st/
+distilbert-hmd-uncased-st/
+distilbert-hmd-uncased-no-st/*
+distilbert-hmd-uncased-st/*  
 .pyre/
+data/
+data/*
+bnert/*
+distilbert-base-uncased-finetuned/*
