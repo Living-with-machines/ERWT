@@ -126,10 +126,6 @@ text = f"1861 [DATE] liberal [POL] london [LOC] [MASK] Majesty."
 preds = mask_filler(text)
 ```
 
-
-### Models to train
-- `bnert-pol`: model trained with prepending political leaning (use of special tokens depends on the time experiments,
-
 ## Data
 
 ### Frozen corpus
