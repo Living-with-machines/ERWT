@@ -105,6 +105,27 @@ text = f"liberal [POL] [MASK] Majesty."
 preds = mask_filler(text)
 ```
 
+### bnert-combined
+
+`/datadrive_2/bnert-combinde`: DistilBERT trained with metadata on year, political leaning and location. 
+The political labels are from the tokenizer's standard vocabulary.
+```python
+['liberal', 'conservative', 'none', 'radical', 'neutral']
+```
+The same applies to year and location.
+
+```python
+['liverpool', 'london']
+```
+
+Metadata and text and separated by a special `[DATE]`, `[POL]` and `[LOC]` token.s
+
+
+```python
+text = f"1861 [DATE] liberal [POL] london [LOC] [MASK] Majesty."
+preds = mask_filler(text)
+```
+
 
 ### Models to train
 - `bnert-pol`: model trained with prepending political leaning (use of special tokens depends on the time experiments,
