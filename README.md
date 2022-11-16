@@ -67,10 +67,10 @@ text = f"[MASK] Majesty."
 preds = mask_filler(text)
 ```
 
-### erwt-pol-st
+### pea-pol-st
 
 
-`/datadrive_2/erwt-pol-st`: DistilBERT trained with metadata on political leaning. The political labels are
+`/datadrive_2/pea-pol-st`: DistilBERT trained with metadata on political leaning. The political labels are
 ```python
 ['[lib]', '[con]', '[none]', '[rad]', '[neutr]']
 ```
@@ -83,9 +83,9 @@ preds = mask_filler(text)
 ```
 
 
-### erwt-pol
+### pea-pol
 
-`/datadrive_2/bnert-pol`: DistilBERT trained with metadata on political leaning. The political labels are from the tokenizer's standard vocabulary.
+`/datadrive_2/pea-pol`: DistilBERT trained with metadata on political leaning. The political labels are from the tokenizer's standard vocabulary.
 ```python
 ['liberal', 'conservative', 'none', 'radical', 'neutral']
 ```
@@ -97,9 +97,10 @@ text = f"liberal [POL] [MASK] Majesty."
 preds = mask_filler(text)
 ```
 
-### erwt-year-pol-loc
 
-`/datadrive_2/bnert-combinde`: DistilBERT trained with metadata on year, political leaning and location. 
+### pea-year-pol-loc
+
+`/datadrive_2/pea-year-pol-loc`: DistilBERT trained with metadata on year, political leaning and location. 
 The political labels are from the tokenizer's standard vocabulary.
 ```python
 ['liberal', 'conservative', 'none', 'radical', 'neutral']
