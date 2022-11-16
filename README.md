@@ -4,25 +4,10 @@
 
 ## Models
 
-### bnert_time
 
-`/datadrive_2/bnert_time`: DistilBERT model created by earlier experiments. Trained on sentences longer than 10 topics and and OCR quality higher than 0.75. For this models we simple prepended the sentences with the year and a `[SEP]` special token. Example of use:
+### erwt-year-st
 
-```python
-tokenizer = AutoTokenizer.from_pretrained("/datadrive_2/bnert_time")
-mask_filler = pipeline(
-    "fill-mask", model="/datadrive_2/bnert_time", top_k=10, tokenizer=tokenizer
-)
-
-text = f"1810 [SEP] [MASK] Majesty."
-preds = mask_filler(text)
-```
-
-Original train-test split is lost. 
-
-### bnert-time-st-y
-
-`/datadrive_2/bnert-time-st-y`: DistilBERT model trained on 0.5 billion tokens (see below for path to dataset). We divided the text into chunks of 100 words (i.e. no sentence splitting). 
+`/datadrive_2/erwt-year-st`: DistilBERT model trained on 0.5 billion tokens (see below for path to dataset). We divided the text into chunks of 100 words (i.e. no sentence splitting). 
 
 To use, please preprocess text as follows:
 ```python
@@ -34,9 +19,23 @@ Data used for training is stored here: `/datadrive_2/frozen_corpus`. The `frozen
 
 Models in the making
 
-### bnert-time-y
+### erwt-year
 
-`/datadrive_2/bnert-time-y`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token.
+`/datadrive_2/erwt-year`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token.
+
+To use, please preprocess text as follows:
+```python
+text = f"1810 [DATE] [MASK] Majesty."
+preds = mask_filler(text)
+```
+
+
+
+
+### erwt-year-masked-25
+
+
+`/datadrive_2/erwt-year-masked-25`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.25.
 
 To use, please preprocess text as follows:
 ```python
@@ -45,21 +44,11 @@ preds = mask_filler(text)
 ```
 
 
-### bnert-time-y_masked_25
+
+### erwt-year-masked-75
 
 
-`/datadrive_2/bnert-time-y_masked_25`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.25.
-
-To use, please preprocess text as follows:
-```python
-text = f"1810 [DATE] [MASK] Majesty."
-preds = mask_filler(text)
-```
-
-### bnert-time-y_masked_75
-
-
-`/datadrive_2/bnert-time-y_masked_75`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.75.
+`/datadrive_2/erwt-year-masked-75`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.75.
 
 To use, please preprocess text as follows:
 ```python
@@ -67,18 +56,21 @@ text = f"1810 [DATE] [MASK] Majesty."
 preds = mask_filler(text)
 ```
 
-### bnert-hmd
 
-`/datadrive_2/bnert-hmd`: DistilBERT model trained on HMD without additional prepended metadata. 
+### erwt-text-only
+
+
+`/datadrive_2/erwt-text-only`: DistilBERT model trained on HMD without additional prepended metadata. 
 
 ```python
 text = f"[MASK] Majesty."
 preds = mask_filler(text)
 ```
 
-### bnert-pol-st
+### erwt-pol-st
 
-`/datadrive_2/bnert-pol-st`: DistilBERT trained with metadata on political leaning. The political labels are
+
+`/datadrive_2/erwt-pol-st`: DistilBERT trained with metadata on political leaning. The political labels are
 ```python
 ['[lib]', '[con]', '[none]', '[rad]', '[neutr]']
 ```
@@ -91,7 +83,7 @@ preds = mask_filler(text)
 ```
 
 
-### bnert-pol
+### erwt-pol
 
 `/datadrive_2/bnert-pol`: DistilBERT trained with metadata on political leaning. The political labels are from the tokenizer's standard vocabulary.
 ```python
@@ -105,7 +97,7 @@ text = f"liberal [POL] [MASK] Majesty."
 preds = mask_filler(text)
 ```
 
-### bnert-combined
+### erwt-year-pol-loc
 
 `/datadrive_2/bnert-combinde`: DistilBERT trained with metadata on year, political leaning and location. 
 The political labels are from the tokenizer's standard vocabulary.
@@ -161,3 +153,22 @@ The `sentences` columns contains the chunk of hundred words (should be renamed).
 ## Code
 
 Code is currently stored in `/datadrive/bNERT` (should be pushed to GitHub after cleaning). Main Notebook is `PrepareDataset.ipynb` which includes a data loading, preprocessing and training code. This is still under construction and ~~should~~ will be cleaned later on.
+
+## Depreciated
+
+
+### bnert_time
+
+`/datadrive_2/bnert_time`: DistilBERT model created by earlier experiments. Trained on sentences longer than 10 topics and and OCR quality higher than 0.75. For this models we simple prepended the sentences with the year and a `[SEP]` special token. Example of use:
+
+```python
+tokenizer = AutoTokenizer.from_pretrained("/datadrive_2/bnert_time")
+mask_filler = pipeline(
+    "fill-mask", model="/datadrive_2/bnert_time", top_k=10, tokenizer=tokenizer
+)
+
+text = f"1810 [SEP] [MASK] Majesty."
+preds = mask_filler(text)
+```
+
+Original train-test split is lost. 
