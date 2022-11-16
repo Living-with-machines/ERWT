@@ -1,6 +1,9 @@
 # ERWT 
 
-# Temporary Readme with overview of data, code and models
+*ERWT* (de; v(m); meervoud: erwten): naam van verschillende peulvruchten
+
+*PEA* noun: pea; plural noun: peas: a spherical green seed that is eaten as a vegetable or as a pulse when dried.
+
 
 ## Models
 
