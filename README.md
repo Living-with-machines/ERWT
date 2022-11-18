@@ -60,10 +60,10 @@ preds = mask_filler(text)
 ```
 
 
-### erwt-text-only
+### hmd-text-only
 
 
-`/datadrive_2/erwt-text-only`: DistilBERT model trained on HMD without additional prepended metadata. 
+`/datadrive_2/hmd-text-only`: DistilBERT model trained on HMD without additional prepended metadata. 
 
 ```python
 text = f"[MASK] Majesty."
