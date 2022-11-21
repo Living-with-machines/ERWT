@@ -1,14 +1,17 @@
-# ERWT 
+# ERWT//PEA Language Models
 
 *ERWT* (de; v(m); meervoud: erwten): naam van verschillende peulvruchten
 
 *PEA* noun: pea; plural noun: peas: a spherical green seed that is eaten as a vegetable or as a pulse when dried.
 
+Models availalbe on the [Living with Machines HuggingFace page](https://huggingface.co/Livingwithmachines).
+
+**Consult Model Cards for more information.**
 
 ## Models
 
 
-### erwt-year
+### [erwt-year](https://huggingface.co/Livingwithmachines/erwt-year)
 
 `Livingwithmachines/erwt-year`: DistilBERT model trained on 0.5 billion tokens (see below for path to dataset). We divided the text into chunks of 100 words (i.e. no sentence splitting). 
 
@@ -22,7 +25,7 @@ mask_filler = pipeline("fill-mask",
 preds = mask_filler("1810 [DATE] [MASK] Majesty.")
 ```
 
-### erwt-year-masked-25
+### [erwt-year-masked-25](https://huggingface.co/Livingwithmachines/erwt-year-masked-25)
 
 
 `Livingwithmachines/erwt-year-masked-25`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.25.
@@ -37,7 +40,7 @@ preds = mask_filler("1810 [DATE] [MASK] Majesty.")
 ```
 
 
-### erwt-year-masked-75
+### [erwt-year-masked-75](https://huggingface.co/Livingwithmachines/erwt-year-masked-75)
 
 
 `Livingwithmachines/erwt-year-masked-75`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.75.
@@ -51,7 +54,7 @@ preds = mask_filler("1810 [DATE] [MASK] Majesty.")
 ```
 
 
-### hmd-text-only
+### hmd-text-only **TBC**
 
 
 `Livingwithmachines/hmd-text-only`: DistilBERT model trained on HMD without additional prepended metadata. 
@@ -61,8 +64,9 @@ text = f"[MASK] Majesty."
 preds = mask_filler(text)
 ```
 
-### pea-pol-st
+### [pea-pol-st](https://huggingface.co/Livingwithmachines/pea-pol-st)
 
+**Model Card under construction** 🚧 
 
 `Livingwithmachines/pea-pol-st`: DistilBERT trained with metadata on political leaning. The political labels are
 ```python
@@ -82,7 +86,9 @@ preds = mask_filler("[lib] [POL] [MASK] Majesty.")
 ```
 
 
-### pea-pol
+### [pea-pol](https://huggingface.co/Livingwithmachines/pea-pol)
+
+**Model Card under construction** 🚧 
 
 `Livingwithmachines/pea-pol`: DistilBERT trained with metadata on political leaning. The political labels are from the tokenizer's standard vocabulary.
 ```python
@@ -101,7 +107,9 @@ preds = mask_filler("liberal [POL] [MASK] Majesty.")
 ```
 
 
-### pea-year-pol-loc
+### [pea-year-pol-loc](https://huggingface.co/Livingwithmachines/pea-year-pol-loc)
+
+**Model Card under construction** 🚧 
 
 `Livingwithmachines/pea-year-pol-loc`: DistilBERT trained with metadata on year, political leaning and location. 
 The political labels are from the tokenizer's standard vocabulary.
@@ -163,7 +171,7 @@ The `sentences` columns contains the chunk of hundred words (should be renamed).
 
 Code is currently stored in `/datadrive/bNERT` (should be pushed to GitHub after cleaning). Main Notebook is `PrepareDataset.ipynb` which includes a data loading, preprocessing and training code. This is still under construction and ~~should~~ will be cleaned later on.
 
-## Depreciated
+# Depreciated
 
 
 ### bnert_time
