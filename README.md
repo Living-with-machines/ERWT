@@ -8,62 +8,53 @@
 ## Models
 
 
-### erwt-year-st
-
-`/datadrive_2/erwt-year-st`: DistilBERT model trained on 0.5 billion tokens (see below for path to dataset). We divided the text into chunks of 100 words (i.e. no sentence splitting). 
-
-To use, please preprocess text as follows:
-```python
-text = f"[1810] [SEP] [MASK] Majesty."
-preds = mask_filler(text)
-```
-
-Data used for training is stored here: `/datadrive_2/frozen_corpus`. The `frozen_corpus` still requires preprocessing, which is captured in `PrepareDataset.ipynb`.
-
-Models in the making
-
 ### erwt-year
 
-`/datadrive_2/erwt-year`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token.
+`Livingwithmachines/erwt-year`: DistilBERT model trained on 0.5 billion tokens (see below for path to dataset). We divided the text into chunks of 100 words (i.e. no sentence splitting). 
 
 To use, please preprocess text as follows:
 ```python
-text = f"1810 [DATE] [MASK] Majesty."
-preds = mask_filler(text)
+from transformers import pipeline
+
+mask_filler = pipeline("fill-mask",
+                       model='Livingwithmachines/erwt-year')
+
+preds = mask_filler("1810 [DATE] [MASK] Majesty.")
 ```
-
-
-
 
 ### erwt-year-masked-25
 
 
-`/datadrive_2/erwt-year-masked-25`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.25.
+`Livingwithmachines/erwt-year-masked-25`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.25.
 
-To use, please preprocess text as follows:
 ```python
-text = f"1810 [DATE] [MASK] Majesty."
-preds = mask_filler(text)
-```
+from transformers import pipeline
 
+mask_filler = pipeline("fill-mask",
+                       model='Livingwithmachines/erwt-year-masked-25')
+
+preds = mask_filler("1810 [DATE] [MASK] Majesty.")
+```
 
 
 ### erwt-year-masked-75
 
 
-`/datadrive_2/erwt-year-masked-75`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.75.
-
-To use, please preprocess text as follows:
+`Livingwithmachines/erwt-year-masked-75`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.75.
 ```python
-text = f"1810 [DATE] [MASK] Majesty."
-preds = mask_filler(text)
+from transformers import pipeline
+
+mask_filler = pipeline("fill-mask",
+                       model='Livingwithmachines/erwt-year-masked-75')
+
+preds = mask_filler("1810 [DATE] [MASK] Majesty.")
 ```
 
 
 ### hmd-text-only
 
 
-`/datadrive_2/hmd-text-only`: DistilBERT model trained on HMD without additional prepended metadata. 
+`Livingwithmachines/hmd-text-only`: DistilBERT model trained on HMD without additional prepended metadata. 
 
 ```python
 text = f"[MASK] Majesty."
@@ -73,22 +64,27 @@ preds = mask_filler(text)
 ### pea-pol-st
 
 
-`/datadrive_2/pea-pol-st`: DistilBERT trained with metadata on political leaning. The political labels are
+`Livingwithmachines/pea-pol-st`: DistilBERT trained with metadata on political leaning. The political labels are
 ```python
 ['[lib]', '[con]', '[none]', '[rad]', '[neutr]']
 ```
 Metadata and text and separated by a special `[POL]` token.
 
 
+
 ```python
-text = f"[lib] [POL] [MASK] Majesty."
-preds = mask_filler(text)
+from transformers import pipeline
+
+mask_filler = pipeline("fill-mask",
+                       model='Livingwithmachines/pea-pol-st')
+
+preds = mask_filler("[lib] [POL] [MASK] Majesty.")
 ```
 
 
 ### pea-pol
 
-`/datadrive_2/pea-pol`: DistilBERT trained with metadata on political leaning. The political labels are from the tokenizer's standard vocabulary.
+`Livingwithmachines/pea-pol`: DistilBERT trained with metadata on political leaning. The political labels are from the tokenizer's standard vocabulary.
 ```python
 ['liberal', 'conservative', 'none', 'radical', 'neutral']
 ```
@@ -96,14 +92,18 @@ Metadata and text and separated by a special `[POL]` token.
 
 
 ```python
-text = f"liberal [POL] [MASK] Majesty."
-preds = mask_filler(text)
+from transformers import pipeline
+
+mask_filler = pipeline("fill-mask",
+                       model='Livingwithmachines/pea-pol')
+
+preds = mask_filler("liberal [POL] [MASK] Majesty.")
 ```
 
 
 ### pea-year-pol-loc
 
-`/datadrive_2/pea-year-pol-loc`: DistilBERT trained with metadata on year, political leaning and location. 
+`Livingwithmachines/pea-year-pol-loc`: DistilBERT trained with metadata on year, political leaning and location. 
 The political labels are from the tokenizer's standard vocabulary.
 ```python
 ['liberal', 'conservative', 'none', 'radical', 'neutral']
@@ -118,8 +118,13 @@ Metadata and text and separated by a special `[DATE]`, `[POL]` and `[LOC]` token
 
 
 ```python
-text = f"1861 [DATE] liberal [POL] london [LOC] [MASK] Majesty."
-preds = mask_filler(text)
+
+from transformers import pipeline
+
+mask_filler = pipeline("fill-mask",
+                       model='Livingwithmachines/pea-year-pol-loc')
+
+preds = mask_filler("1861 [DATE] liberal [POL] london [LOC] [MASK] Majesty.")
 ```
 
 ## Data
@@ -176,3 +181,13 @@ preds = mask_filler(text)
 ```
 
 Original train-test split is lost. 
+
+### erwt-year-st
+
+`Livingwithmachines/erwt-year-st`: DistilBERT model trained on 0.5 billion tokens (see below for path to dataset). We divided the text into chunks of 100 words (i.e. no sentence splitting). 
+
+To use, please preprocess text as follows:
+```python
+text = f"[1810] [SEP] [MASK] Majesty."
+preds = mask_filler(text)
+```
