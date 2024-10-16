@@ -14,6 +14,8 @@ Models available on the [Living with Machines HuggingFace page](https://huggingf
 
 ### [erwt-year](https://huggingface.co/Livingwithmachines/erwt-year)
 
+![https://huggingface.co/Livingwithmachines/erwt-year](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-md-dark.svg)
+
 `Livingwithmachines/erwt-year`: DistilBERT model trained on 0.5 billion tokens (see below for path to dataset). We divided the text into chunks of 100 words (i.e. no sentence splitting). 
 
 To use, please preprocess text as follows:
@@ -28,6 +30,8 @@ preds = mask_filler("1810 [DATE] [MASK] Majesty.")
 
 ### [erwt-year-masked-25](https://huggingface.co/Livingwithmachines/erwt-year-masked-25)
 
+![https://huggingface.co/Livingwithmachines/erwt-year-masked-25](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-md-dark.svg)
+
 `Livingwithmachines/erwt-year-masked-25`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.25.
 
 ```python
@@ -40,6 +44,8 @@ preds = mask_filler("1810 [DATE] [MASK] Majesty.")
 ```
 
 ### [erwt-year-masked-75](https://huggingface.co/Livingwithmachines/erwt-year-masked-75)
+
+![https://huggingface.co/Livingwithmachines/erwt-year-masked-75](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-md-dark.svg)
 
 `Livingwithmachines/erwt-year-masked-75`: DistilBERT model trained on same data as the above. Dates are added as standard tokens, and separated from the text with a `[DATE]` special token. We masked the time token with probabiliy of 0.75.
 
@@ -54,6 +60,8 @@ preds = mask_filler("1810 [DATE] [MASK] Majesty.")
 
 ### hmd-text-only **TBC**
 
+![https://huggingface.co/Livingwithmachines/hmd-text-only](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-md-dark.svg)
+
 `Livingwithmachines/hmd-text-only`: DistilBERT model trained on HMD without additional prepended metadata. 
 
 ```python
@@ -62,6 +70,8 @@ preds = mask_filler(text)
 ```
 
 ### [pea-pol-st](https://huggingface.co/Livingwithmachines/pea-pol-st)
+
+![https://huggingface.co/Livingwithmachines/pea-pol-st](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-md-dark.svg)
 
 **Model Card under construction** 🚧 
 
@@ -83,6 +93,8 @@ preds = mask_filler("[lib] [POL] [MASK] Majesty.")
 
 ### [pea-pol](https://huggingface.co/Livingwithmachines/pea-pol)
 
+![https://huggingface.co/Livingwithmachines/pea-pol](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-md-dark.svg)
+
 **Model Card under construction** 🚧 
 
 `Livingwithmachines/pea-pol`: DistilBERT trained with metadata on political leaning. The political labels are from the tokenizer's standard vocabulary.
@@ -103,6 +115,8 @@ preds = mask_filler("liberal [POL] [MASK] Majesty.")
 ```
 
 ### [pea-year-pol-loc](https://huggingface.co/Livingwithmachines/pea-year-pol-loc)
+
+![https://huggingface.co/Livingwithmachines/pea-pol-loc](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-md-dark.svg)
 
 **Model Card under construction** 🚧 
 
@@ -187,6 +201,8 @@ preds = mask_filler(text)
 Original train-test split is lost. 
 
 ### erwt-year-st
+
+![https://huggingface.co/Livingwithmachines/erwt-year-st](https://huggingface.co/datasets/huggingface/badges/resolve/main/model-on-hf-md-dark.svg)
 
 `Livingwithmachines/erwt-year-st`: DistilBERT model trained on 0.5 billion tokens (see below for path to dataset). We divided the text into chunks of 100 words (i.e. no sentence splitting). 
 
